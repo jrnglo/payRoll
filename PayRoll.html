@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PayrollSystem</title>
+    </head>
+    <body>
+    <br>
+    <br>
+    <br>
+    <form>
+        <center>
+            <table border=1 width=285 bordercolor="#3333">
+                <tr>
+                    <th colspan=2>Payroll System</th>
+                </tr>
+                <tr>
+                    <td>Employee Name</td>
+                    <td><input id="name" type="text" name="name"></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><input id="address" type="text" name="address"></td>
+                </tr>
+                <tr>
+                    <td>Contact Number</td>
+                    <td><input id="tel" type="number" name="tel"></td>
+                </tr>
+                <tr>
+                    <td>Rate Per Hour</td>
+                    <td><input id="rate" type="number" name="rate"></td>
+                </tr>
+                <tr>
+                    <td>No. Hours Worked</td>
+                    <td><input id="hours" type="number" name="hours"></td>
+                </tr>
+                <hr>
+                <tr>
+                    <td colspan=2 align=center>   
+                    <input class="btn" type="button" value="Compute" onclick="btnCompute()";> &nbsp&nbsp&nbsp&nbsp
+                    <input class="btn" type="reset" value="Clear"></td>
+                </tr>
+            </table>
+        </center>
+    </form>
+   <br>
+   <br>
+    <center><button class="credits" onclick="redirect3()"> @JaruRoces </button></center>
+    <style type="text/css">
+    body {
+    background-color: #e0e0e0;
+    }
+    input{
+    background-color: #e0e0e0;
+    }
+    .btn {
+    color: #e0e0e0;
+    border: none;
+    background-color: #333;
+    }
+    td {
+    font-size: 13px;
+    }
+    .alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    }
+    .credits{
+    font-size: 10px;
+    color: black;
+    border: none;
+    outline: none;
+    background: none;
+    margin: 0px;
+    }
+    </style>
+    <script language="javascript">
+    function btnCompute()
+    {
+    var name = document.getElementById("name").value;
+    var address = document.getElementById("address").value;
+    var tel = document.getElementById("tel").value;
+    var rate = document.getElementById("rate").value;
+    var hours = document.getElementById("hours").value;
+    var br = "<br>"
+    if (document.getElementById("name").value==""){
+    alert("Check the Employee Name ! "); 
+    }
+    if (document.getElementById("address").value==""){
+    alert("Please input address ! "); 
+    }
+    if (document.getElementById("tel").value==""){
+    alert("Contact Number is Empty ! "); 
+    }
+    if (document.getElementById("rate").value==""){
+    alert("Rate per hour is empty ! "); 
+    }
+    if (document.getElementById("hours").value==""){
+    alert("No. of Hours is Empty ! "); 
+    }
+    else {
+    var salary = rate * hours;
+    var tp = salary - (salary * 0.1);
+    var tax = salary * 0.1;
+    document.write("Employee Name : " + name);
+    document.write("<br>Address : " + address);
+    document.write("<br>Contact Number : " + tel);
+    document.write("<br>Rate Per Hour : " + rate);
+    document.write("<br>No. of Hours Worked : " + hours);
+    document.write("<br>Salary : " + salary);
+    document.write("<br>Tax : " + tax);
+    document.write("<br>Take Home Pay : " + tp);
+    }
+    }
+    function redirect3(){
+    window.location="https://www.facebook.com/jaru.roces";
+    }
+    </script>
+    </body>
+</html>
